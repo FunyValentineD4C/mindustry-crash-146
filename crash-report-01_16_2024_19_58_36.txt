@@ -1,0 +1,38 @@
+Mindustry has crashed. How unfortunate.
+Version: release build 146
+OS: Windows 10 x64 (amd64)
+Java Version: 16.0.1
+Runtime Available Memory: 3902mb
+Cores: 16
+Mods: betamindy:1.1
+[#b59e72]Demo of Chaos Itself[], betamindy-music:1.0, time-control:0.2, xelos-pixel-texturepack:0.4.1
+
+mindustry.io.SaveIO$SaveException: java.io.IOException: Error reading region "map".
+	at mindustry.io.SaveIO.load(SaveIO.java:152)
+	at mindustry.maps.generators.FileMapGenerator.generate(FileMapGenerator.java:47)
+	at mindustry.core.World.lambda$loadSector$2(World.java:266)
+	at mindustry.core.World.loadGenerator(World.java:251)
+	at mindustry.core.World.loadSector(World.java:264)
+	at mindustry.core.World.loadSector(World.java:257)
+	at mindustry.core.Control.playNewSector(Control.java:515)
+	at mindustry.core.Control.lambda$playSector$33(Control.java:508)
+	at mindustry.core.UI.lambda$loadAnd$10(UI.java:268)
+	at arc.util.Timer$1.run(Timer.java:88)
+	at arc.util.TaskQueue.run(TaskQueue.java:17)
+	at arc.backend.sdl.SdlApplication.loop(SdlApplication.java:194)
+	at arc.backend.sdl.SdlApplication.<init>(SdlApplication.java:54)
+	at mindustry.desktop.DesktopLauncher.main(DesktopLauncher.java:39)
+Caused by: java.io.IOException: Error reading region "map".
+	at mindustry.io.SaveFileReader.region(SaveFileReader.java:98)
+	at mindustry.io.versions.LegacyRegionSaveVersion.read(LegacyRegionSaveVersion.java:24)
+	at mindustry.io.SaveIO.load(SaveIO.java:167)
+	at mindustry.io.SaveIO.load(SaveIO.java:145)
+	... 13 more
+Caused by: java.io.EOFException
+	at java.base/java.io.DataInputStream.readShort(Unknown Source)
+	at mindustry.io.SaveVersion.readMap(SaveVersion.java:291)
+	at mindustry.io.versions.LegacyRegionSaveVersion.lambda$read$1(LegacyRegionSaveVersion.java:24)
+	at mindustry.io.SaveFileReader.readChunk(SaveFileReader.java:164)
+	at mindustry.io.SaveFileReader.readChunk(SaveFileReader.java:157)
+	at mindustry.io.SaveFileReader.region(SaveFileReader.java:96)
+	... 16 more
